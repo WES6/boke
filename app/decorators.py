@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# 检查用户权限的装饰器
+# 检查用户权限的装饰器，用法同flask_login提供login_required
 
 from functools import wraps
 from flask import abort
