@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+import hashlib
 
 from flask import render_template, redirect, url_for, flash
 from flask_login import login_required, current_user
@@ -48,6 +49,8 @@ def edit_profile_admin(id):
     user = User.query.get_or_404(id)
     form = EditProfileAdminForm(user=user)
     if form.validate_on_submit():
+        if user.email != form.email.data:                                 # 若邮箱更改，重新计算用户头像URL地址
+            user.avatar_hash = hashlib.md5(form.email.data.encode('utf-8')).hexdigest()
         user.email = form.email.data
         # user.username = form.username.data
         # user.confirmed = form.confirmed.data

@@ -20,6 +20,7 @@ def before_request():
         #     return redirect(url_for('auth.unconfirmed'))
 
 
+# 登录路由
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -32,6 +33,7 @@ def login():
     return render_template('auth/login.html', form=form)
 
 
+# 登出路由
 @auth.route('/logout')
 @login_required
 def logout():
@@ -40,6 +42,7 @@ def logout():
     return redirect(url_for('main.index'))
 
 
+# 注册路由
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
@@ -52,6 +55,3 @@ def register():
         flash('Successful register.')
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', form=form)
-
-
-
