@@ -1,9 +1,13 @@
 # -*- coding: UTF-8 -*-
 
+import sys
+
 from app import create_app, db
 from app.models import User, Role
 from flask_script import Manager, Shell
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
 app = create_app('default')
 manager = Manager(app)
 
