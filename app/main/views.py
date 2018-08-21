@@ -1,12 +1,10 @@
 # -*- coding: UTF-8 -*-
 
-from datetime import datetime
-from flask import session, render_template, redirect, url_for, request, flash
-from flask_login import current_app, login_required, current_user
-from ..decorators import admin_required, permission_required
+from flask import render_template, redirect, url_for, flash
+from flask_login import login_required, current_user
+from ..decorators import admin_required
 from app.main.forms import EditProfileForm, EditProfileAdminForm
 from . import main
-from .. import db
 from ..models import *
 
 

@@ -2,7 +2,7 @@
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField, SelectField
-from wtforms.validators import Required, Length, DataRequired, Email, Regexp, ValidationError
+from wtforms.validators import Length, DataRequired, Email, Regexp, ValidationError
 from app.models import *
 
 
