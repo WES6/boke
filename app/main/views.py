@@ -5,7 +5,7 @@ from flask_login import login_required, current_user
 from ..decorators import admin_required
 from app.main.forms import EditProfileForm, EditProfileAdminForm
 from . import main
-from ..models import *
+from ..models import User, db, Role
 
 
 # 主页路由
