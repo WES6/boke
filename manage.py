@@ -14,8 +14,8 @@ def make_shell_context():
     return dict(db=db, User=User, Role=Role)
 
 
+# Test
 manager.add_command("shell", Shell(make_context=make_shell_context))
-
 
 if __name__ == '__main__':
     manager.run()
