@@ -41,7 +41,8 @@ def index():
 @main.route('/user/<name>')
 def user(name):
     user = User.query.filter_by(name=name).first_or_404()
-    return render_template('user.html', user=user)
+    posts = user.posts.order_by(Post.timestamp.desc()).all()
+    return render_template('user.html', user=user, posts=posts)
 
 
 # 用户资料编辑路由
